@@ -1,0 +1,108 @@
+body{
+    background-color: #817e7e;
+}
+
+.contenido{
+    border-radius: 0.5em;
+    margin: 15px;
+    align-items: center;
+    background: rgb(59, 57, 57);
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.fondi{
+    border-radius: 0.5em;
+    margin: 15px;
+    align-items: center;
+    background: rgb(59, 57, 57);
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    /* row-gap: 30px; */
+}
+
+.fondo2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#cajapdf{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.bg-body-tertiary{
+    background-color: #918f8f !important;
+}
+
+h1{
+    position: absolute;
+    top: 5%;
+    color: rgb(255, 255, 255);
+    font-family: "Damion", cursive;
+}
+
+
+.container {
+    position: relative;
+    margin-top: -100px;
+    width: 360px;
+}
+
+.container > * {
+    width: 340px;
+    height: 120px;
+    border: solid 1px #bebebe;
+    background-color: #1f1f1f;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 0px 8px 20px -10px #bbbbbb;
+    text-shadow: 0px 0px 5px #fff;
+    letter-spacing: 1px;
+    background-image: radial-gradient(circle 160px at 50% 120%, #353535, #1f1f1f);
+}
+
+.card1 {
+    width: 300px;
+    margin: -20px 0px 0px 20px;
+}
+
+.card2 {
+    width: 320px;
+    margin: -10px 0px 0px 10px;
+}
+
+
+.responder{
+    margin: 12px;
+    height: 40px;
+    width: 95px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+      inset -5px -5px 10px #222;
+    font-family: "Damion", cursive;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(187, 179, 179);
+    transition: 500ms;
+  }
+  
+  button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+      inset -5px -5px 10px #444;
+    color: #d6d6d6;
+    transition: 500ms;
+  }
+  

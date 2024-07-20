@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Css/Estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final</title>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1"> Anderson Julian Bustos Manjarrez </span>
+        </div>
+      </nav>
+
+    <div class="contenido">
+        <h1>Juego de Operaciones Matemáticas</h1>
+        <div class="fondo1">
+            <div class="container">
+                <div class="card1"></div>
+                <div class="card2"></div>
+                <div class="card3">
+                    <div id="game">
+                        <p id="question"></p>
+                        <input type="number" id="answer" placeholder="Introduce tu respuesta">
+                        <button onclick="checkAnswer()"  class="responder">Responder</button>
+                        <div id="feedback">
+                            <img id="feedbackImage" src="" alt="Feedback">
+                            <p id="feedbackText"></p>
+                        </div>
+                    </div>
+                    <script>
+                        let num1, num2, operator, correctAnswer;
+                
+                        function generateQuestion() {
+                            num1 = Math.floor(Math.random() * 10) + 1;
+                            num2 = Math.floor(Math.random() * 10) + 1;
+                            const operators = ['+', '-', '*', '/'];
+                            operator = operators[Math.floor(Math.random() * operators.length)];
+                
+                            switch (operator) {
+                                case '+':
+                                    correctAnswer = num1 + num2;
+                                    break;
+                                case '-':
+                                    correctAnswer = num1 - num2;
+                                    break;
+                                case '*':
+                                    correctAnswer = num1 * num2;
+                                    break;
+                                case '/':
+                                    correctAnswer = Math.floor((num1 / num2) * 100) / 100; // Redondea a 2 decimales
+                                    break;
+                            }
+                
+                            document.getElementById('question').innerText = `¿Cuánto es ${num1} ${operator} ${num2}?`;
+                            document.getElementById('feedback').style.display = 'none';
+                        }
+                
+                        function checkAnswer() {
+                            const userAnswer = parseFloat(document.getElementById('answer').value);
+                            const feedback = document.getElementById('feedback');
+                            const feedbackImage = document.getElementById('feedbackImage');
+                            const feedbackText = document.getElementById('feedbackText');
+                            if (userAnswer === correctAnswer) {
+                                feedbackImage.src = "Imagenes/Correcto.jpg";
+                                feedbackText.innerText = "¡Correcto!";
+                            } else {
+                                feedbackImage.src = "Imagenes/Incorrecto.jpg";
+                                feedbackText.innerText = "Sigue intentando.";
+                            }
+                            feedback.style.display = 'block';
+                            setTimeout(generateQuestion, 2000); // Generar una nueva pregunta después de 2 segundos
+                        }
+                
+                        // Inicializar el juego con la primera pregunta
+                        generateQuestion();
+                    </script>
+            </div>
+        </div> 
+    </div> 
+    </div>
+
+    <hr>
+
+    <div class="fondi">
+        <div class="fondo2">
+            <object data="Anderson.pdf" type="application/pdf" id="cajapdf">
+                <p>Hoja De Vida</p>
+            </object>
+        </div>
+    </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
